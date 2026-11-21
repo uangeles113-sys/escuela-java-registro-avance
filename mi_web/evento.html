@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi web — Eventos</title>
+        <link rel="icon" href="images/favicon-tsuru.png" type="image/png">
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Nissan Tsuru</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="evento.html">Eventos</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                    <li><a href="multimedia.html">Multimedia</a></li>
+                    <li><a href="index.html#acerca-de">Acerca de</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <h2>Regístrate a nuestro próximo evento</h2>
+                <p>
+                    Únete a la reunión y rodada de entusiastas y propietarios del Nissan Tsuru para compartir experiencias, exhibición de modelos clásicos y consejos de mantenimiento.
+                </p>
+
+                <form action="index.html" method="get">
+                    <fieldset>
+                        <legend>Datos del participante</legend>
+
+                        <label for="nombre">Ingresa tu nombre:</label>
+                        <input type="text" id="nombre" name="nombre" minlength="2" maxlength="20" required>
+
+                        <br><br>
+
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" min="18" max="100" required>
+
+                        <br><br>
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <br><br>
+
+                        <label for="clave">Código de acceso al club:</label>
+                        <input type="password" id="clave" name="clave">
+                    </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Versión de tu Nissan Tsuru (elige una)</legend>
+
+                        <label for="gs1">
+                            <input type="radio" id="gs1" name="version" value="GS I" required>
+                            Tsuru GS I
+                        </label>
+
+                        <label for="gs2">
+                            <input type="radio" id="gs2" name="version" value="GS II">
+                            Tsuru GS II
+                        </label>
+
+                        <label for="gsr2000">
+                            <input type="radio" id="gsr2000" name="version" value="GSR 2000">
+                            Tsuru GSR 2000
+                        </label>
+                    </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Actividades en las que participarás (puedes elegir varias)</legend>
+
+                        <label for="rodada">
+                            <input type="checkbox" id="rodada" name="actividades" value="rodada">
+                            Rodada grupal
+                        </label>
+
+                        <label for="exhibicion">
+                            <input type="checkbox" id="exhibicion" name="actividades" value="exhibicion">
+                            Exhibición de clásicos
+                        </label>
+
+                        <label for="mecanica">
+                            <input type="checkbox" id="mecanica" name="actividades" value="mecanica">
+                            Taller de mantenimiento
+                        </label>
+                    </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Detalles adicionales de tu vehículo</legend>
+
+                        <label for="anio">Año del Tsuru:</label>
+                        <input type="number" id="anio" name="anio" min="1984" max="2017">
+
+                        <br><br>
+
+                        <label for="color_auto">Color de tu Tsuru:</label>
+                        <input type="color" id="color_auto" name="color_auto">
+
+                        <br><br>
+
+                        <label for="fecha_asistencia">Fecha de asistencia:</label>
+                        <input type="date" id="fecha_asistencia" name="fecha_asistencia">
+
+                        <br><br>
+
+                        <label for="foto_tsuru">Sube una foto de tu Tsuru:</label>
+                        <input type="file" id="foto_tsuru" name="foto_tsuru">
+                    </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Eventos</legend>
+
+                        <label for="evento">Selecciona el evento:</label>
+                        <select id="evento" name="evento">
+                            <option value="rodada_tsuru_clasico">Rodada Tsuru Clásico</option>
+                            <option value="exhibicion_v16">Exhibición Nissan Tsuru V16</option>
+                            <option value="taller_afinacion_tsuru">Taller de Afinación y Motor GA16</option>
+                        </select>
+                    </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Ciudad de evento</legend>
+
+                        <label for="ciudad">Ciudad:</label>
+                        <input list="ciudades" id="ciudad" name="ciudad" required>
+
+                        <datalist id="ciudades">
+                            <option value="Toluca">
+                            <option value="Jiquipilco">
+                            <option value="Ciudad de México">
+                            <option value="Cuernavaca">
+                            <option value="Puebla">
+                            <option value="Querétaro">
+                        </datalist>
+                    </fieldset>
+
+                    <br>
+
+                    <button type="submit">Confirmar registro</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Más información sobre los eventos</h2>
+
+                <details open>
+                    <summary>Rodada Tsuru Clásico</summary>
+                    <div>
+                        <p>
+                            Recorrido organizado para unidades Tsuru de primera, segunda y tercera generación con ruta segura y apoyo mecánico básico.
+                        </p>
+                        <ul>
+                            <li>Punto de encuentro: 08:00 hrs con tanque lleno</li>
+                            <li>Revisión previa de luces, frenos y presión de llantas</li>
+                            <li>Fotografía grupal al finalizar el trayecto</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Exhibición Nissan Tsuru V16</summary>
+                    <p>
+                        Muestra de ejemplares originales, restaurados y ediciones especiales como Tsuru GSR 2000 y Buen Camino.
+                    </p>
+                    <p>
+                        Los asistentes podrán conocer el historial de cada unidad y conversar con sus propietarios.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Taller de Afinación y Motor GA16</summary>
+                    <p>
+                        Sesión práctica enfocada en el mantenimiento preventivo del motor GA16DE: cambio de bujías, limpieza de cuerpo de aceleración y revisión de sensores.
+                    </p>
+                    <p>
+                        Ideal para aprender a detectar fallas comunes y conservar el rendimiento del vehículo.
+                    </p>
+                </details>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Mi web. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>

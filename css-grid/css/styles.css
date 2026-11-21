@@ -1,0 +1,20 @@
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: auto;
+    gap: 10px;
+    padding: 10px;
+    background-color: #3f3844;
+}
+
+section div {
+    background-color: #ff5733;
+    color: #f7f7f7;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

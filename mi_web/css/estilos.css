@@ -1,0 +1,236 @@
+:root {
+    --color-azul-tsuru: #1a73e8;
+    --color-negro-tsuru: #202124;
+    --color-blanco-tsuru: #ffffff;
+    --color-claro-tsuru: #ededed;
+    --color-gris-tsuru: #b4b4b4;
+    --fuente-principal: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-blanco-tsuru);
+    color: var(--color-negro-tsuru);
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    overflow: hidden;
+    padding: 10px 30px;
+}
+
+nav {
+    float: right;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+nav .nav-link {
+    color: var(--color-negro-tsuru);
+}
+
+nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+nav .nav-apps {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+nav .nav-apps:hover {
+    background-color: var(--color-claro-tsuru);
+}
+
+nav .nav-apps img {
+    display: inline-block;
+    width: 25px;
+    vertical-align: middle;
+}
+
+nav .nav-login {
+    background-color: var(--color-azul-tsuru);
+    color: var(--color-blanco-tsuru);
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+nav .nav-login:hover {
+    box-shadow: 0 0 3px var(--color-azul-tsuru);
+}
+
+main {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 600px;
+    max-width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.logo img {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.buscador-bar {
+    margin-top: 20px;
+}
+
+.buscador-bar .label-buscador {
+    display: block;
+    width: 584px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border: 1px solid var(--color-gris-tsuru);
+    border-radius: 100px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.buscador-bar .label-buscador:hover {
+    box-shadow: 0 0 3px var(--color-gris-tsuru);
+}
+
+.buscador-bar .label-buscador img {
+    vertical-align: middle;
+}
+
+.buscador-bar .label-buscador .icon-buscar {
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.buscador-bar .label-buscador input[type="text"] {
+    float: left;
+    width: 80%;
+    font-size: 16px;
+    font-family: var(--fuente-principal);
+    color: var(--color-negro-tsuru);
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+}
+
+.buscador-bar .label-buscador input[type="text"]:focus {
+    outline: none;
+}
+
+.buscador-bar .label-buscador .acciones-buscador {
+    float: right;
+    vertical-align: middle;
+}
+
+.buscador-bar .label-buscador .acciones-buscador a {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.botones {
+    margin-top: 30px;
+}
+
+.botones button {
+    all: unset;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 4px;
+    background-color: var(--color-claro-tsuru);
+    color: var(--color-negro-tsuru);
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    outline: 1px solid var(--color-gris-tsuru);
+}
+
+.botones p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--color-negro-tsuru);
+}
+
+.botones p a {
+    color: var(--color-azul-tsuru);
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.botones p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-claro-tsuru);
+    padding: 15px 0;
+}
+
+footer .pais {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-gris-tsuru);
+    color: var(--color-negro-tsuru);
+}
+
+.footer-links {
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.footer-links ul:first-child {
+    float: left;
+}
+
+.footer-links ul:last-child {
+    float: right;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-negro-tsuru);
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
