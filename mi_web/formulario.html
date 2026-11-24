@@ -2,29 +2,46 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Equipo y Orden — Mantenimiento Preventivo</title>
+    <link rel="icon" href="images/favicon-tsuru.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Formulario</h1>
+    <header>
+        <h1 class="title">Registro de Equipo y Orden de Trabajo</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="evento.html" class="nav-link">Programación</a>
+            <a href="multimedia.html" class="nav-link">Evidencias</a>
+        </nav>
+    </header>
 
-    <form action="">
-        <label for="numero">Numero: </label>
-        <input type="number" name="numero" id="numero" placeholder="Ingrese numero">
-        <br><br>
+    <main>
+        <form id="form-equipo" action="#" method="post" novalidate>
+            <fieldset>
+                <legend>Alta / Verificación de Equipo (E1 · EDT 1.1–1.2)</legend>
 
-        <label for="nombre">Nombre: </label>
-        <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre">
-        <br><br>
+                <label for="folioEquipo">Código de equipo (EQ-0000):</label>
+                <input type="text" name="folioEquipo" id="folioEquipo" placeholder="Ej. EQ-0104">
 
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" placeholder="Ingrese email">
-        <br><br>
+                <label for="nombreEquipo">Nombre o modelo del equipo:</label>
+                <input type="text" name="nombreEquipo" id="nombreEquipo" placeholder="Ej. Estación de trabajo Dell OptiPlex">
 
-        <label for="pass">Contraseña: </label>
-        <input type="password" name="pass" id="pass" placeholder="Ingrese contraseña">
-        <br><br>
+                <label for="correoResponsable">Correo del responsable de área:</label>
+                <input type="email" name="correoResponsable" id="correoResponsable" placeholder="Ej. coordinador@institucion.edu.mx">
 
-        <input type="submit" value="Enviar" name="enviar">
-    </form>
+                <label for="claveAcceso">Clave de sesión (control de acceso por rol):</label>
+                <input type="password" name="claveAcceso" id="claveAcceso" placeholder="Ingrese clave de acceso">
+
+                <br>
+                <button type="submit">Validar datos en cliente</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sistema de Mantenimiento Preventivo de Equipos.</p>
+    </footer>
 </body>
 </html>

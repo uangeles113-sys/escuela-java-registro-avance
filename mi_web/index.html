@@ -3,67 +3,100 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Buscador Nissan Tsuru</title>
+        <title>Sistema de Mantenimiento Preventivo de Equipos</title>
+        <link rel="icon" href="images/favicon-tsuru.png" type="image/png">
         <link rel="stylesheet" href="css/estilos.css">
     </head>
     <body>
         <header>
-            <nav>
-                <a href="#versiones" class="nav-link">Versiones</a>
-                <a href="#galeria" class="nav-link">Galería</a>
-                <a href="#comunidad" class="nav-apps" title="Comunidad Tsuru">
-                    <img src="images/apps-icon.png" alt="Ícono comunidad Tsuru">
+            <nav aria-label="Navegación principal">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="evento.html" class="nav-link">Programación</a>
+                <a href="multimedia.html" class="nav-link">Evidencias</a>
+                <a href="formulario.html" class="nav-apps" title="Registro y Órdenes de Trabajo">
+                    <img src="images/apps-icon.png" alt="Ícono de módulos del sistema">
                 </a>
-                <a href="#acceso" class="nav-login">Club Tsuru</a>
+                <a href="formulario.html" class="nav-login">Acceso Técnico / Admin</a>
             </nav>
         </header>
 
         <main>
             <section class="logo">
-                <img src="images/tsuru-logo.png" alt="Logo Nissan Tsuru" width="300">
+                <img src="images/tsuru-logo.png" alt="Logo Mantenimiento Preventivo de Equipos" width="220">
             </section>
 
             <section class="buscador-bar">
-                <label class="label-buscador" for="buscar">
-                    <img src="images/search-icon.png" alt="Ícono de buscar" width="25" class="icon-buscar">
-                    <input type="text" id="buscar" name="buscar" placeholder="Buscar modelos, motor GA16DE o refacciones del Tsuru">
+                <form id="form-busqueda-rapida" class="label-buscador" role="search">
+                    <label for="buscar" class="sr-only">Buscar equipo o módulo</label>
+                    <img src="images/search-icon.png" alt="Ícono de buscar" width="22" class="icon-buscar">
+                    <input
+                        type="text"
+                        id="buscar"
+                        name="buscar"
+                        placeholder="Buscar equipo (EQ-0000), programación, formulario o evidencias"
+                    >
                     <div class="acciones-buscador">
-                        <a href="#voz-tsuru" title="Buscar por voz">
-                            <img src="images/mic-icon.png" alt="Ícono de micrófono" width="25">
+                        <a href="formulario.html" title="Ir a Registro de Equipo y Orden">
+                            <img src="images/mic-icon.png" alt="Ícono de registro" width="22">
                         </a>
-                        <a href="#camara-tsuru" title="Buscar por imagen">
-                            <img src="images/camera-icon.png" alt="Ícono de cámara" width="25">
+                        <a href="multimedia.html" title="Ir a Multimedia y Evidencias">
+                            <img src="images/camera-icon.png" alt="Ícono de evidencias" width="22">
                         </a>
                     </div>
-                </label>
+                </form>
+                <p id="aviso-busqueda" class="aviso-busqueda" aria-live="polite"></p>
             </section>
 
             <section class="botones">
-                <button type="button">Buscar Tsuru</button>
-                <button type="button">Edición Especial</button>
+                <a href="formulario.html" class="btn-accion">Consultar / Registrar Equipo</a>
+                <a href="evento.html" class="btn-accion">Programar Servicio</a>
                 <p>
-                    Fichas técnicas disponibles en:
-                    <a href="#v16">Tsuru V16</a>
-                    <a href="#gsr">Tsuru GSR 2000</a>
+                    Accesos directos a apartados:
+                    <a href="formulario.html">Formulario (E1 / E3)</a>
+                    <a href="evento.html">Programación (E2 / E3)</a>
+                    <a href="multimedia.html">Multimedia (E4)</a>
                 </p>
             </section>
         </main>
 
         <footer>
-            <div class="pais">México</div>
+            <div class="pais">UES Jiquipilco — Ingeniería en Sistemas Computacionales</div>
             <div class="footer-links">
                 <ul>
-                    <li><a href="#historia">Sobre Tsuru</a></li>
-                    <li><a href="#mantenimiento">Mantenimiento</a></li>
-                    <li><a href="#refacciones">Refacciones</a></li>
-                    <li><a href="#motor">Motor GA16DE</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="evento.html">Programación</a></li>
+                    <li><a href="formulario.html">Formulario</a></li>
+                    <li><a href="multimedia.html">Multimedia</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#privacidad">Privacidad</a></li>
-                    <li><a href="#condiciones">Condiciones</a></li>
-                    <li><a href="#preferencias">Preferencias</a></li>
+                    <li><a href="formulario.html">Control de Acceso</a></li>
+                    <li><a href="evento.html">Lineamientos (StRS/SyRS/SRS)</a></li>
+                    <li><a href="index.html">Alcance y Exclusiones</a></li>
                 </ul>
             </div>
         </footer>
+
+        <script>
+            document.getElementById('form-busqueda-rapida').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const texto = document.getElementById('buscar').value.trim().toLowerCase();
+                const aviso = document.getElementById('aviso-busqueda');
+
+                if (!texto) {
+                    aviso.textContent = 'Escribe un término como "programar", "formulario", "evidencias" o un código EQ-0104 para ir directo.';
+                    return;
+                }
+
+                if (texto.includes('evidencia') || texto.includes('foto') || texto.includes('multimedia') || texto.includes('e4')) {
+                    window.location.href = 'multimedia.html';
+                } else if (texto.includes('program') || texto.includes('calendario') || texto.includes('fecha') || texto.includes('e2')) {
+                    window.location.href = 'evento.html';
+                } else if (texto.includes('form') || texto.includes('equipo') || texto.includes('eq-') || texto.includes('orden') || texto.includes('e1') || texto.includes('e3')) {
+                    window.location.href = 'formulario.html';
+                } else {
+                    aviso.textContent = 'Sin coincidencia directa para "' + texto + '". Usa los enlaces de Programación, Formulario o Multimedia.';
+                }
+            });
+        </script>
     </body>
 </html>
